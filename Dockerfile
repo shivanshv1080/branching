@@ -6,7 +6,7 @@ WORKDIR /tmp/repo
 ENV LANG C.UTF-8
 ENV SHELL /bin/bash
 USER root 
-
+# working in the right directoy
 ENV APT_PKGS bzip2 ca-certificates curl wget gnupg2 squashfs-tools git
 RUN ["snakemake","--help"]
 # RUN apt-get update \
