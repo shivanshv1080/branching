@@ -1,0 +1,19 @@
+# config/config.yml
+
+# Paths
+raw_data: "data/raw/"            # Path to raw input FASTQ files
+processed_data: "data/processed/" # Path to processed data
+fastqc_results: "results/fastqc/" # Path to FastQC outputs
+trimmomatic_results: "results/trimmed/" # Path to Trimmomatic outputs
+multiqc_results: "results/multiqc/" # Path to MultiQC outputs
+
+# Trimmomatic parameters
+trimmomatic:
+  adapter_file: "scripts/trimmomatic_adapter.fa"
+  sliding_window: "4:20"
+  minlen: "36"
+
+# Docker-specific paths (mounting)
+docker_mounts:
+  local_dir: "./"                 # Local directory to mount
+  docker_dir: "/workspace/"       # Directory inside Docker

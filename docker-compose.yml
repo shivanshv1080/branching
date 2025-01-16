@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  snakemake:
+    image: snakemake/snakemake:v7.23.0
+    container_name: snakemake_pipeline
+    volumes:
+      - ./data:/workspace/data
+      - ./results:/workspace/results
+      - ./config:/workspace/config
+      - ./scripts:/workspace/scripts
+      - ./Snakefile:/workspace/Snakefile
+      - ./envs:/workspace/envs
+    working_dir: /workspace
+    command: snakemake --cores 4
